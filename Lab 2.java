@@ -3,7 +3,7 @@
 
 //In a separate class named StudentAccess, create a main method that instantiates three student objects using the above two constructors separately. In addition, you should show how to access and mutate the object data field by calling the access/mutator methods.
 
-class student {
+class Student {
     private String name;
     private String Stu_Id;
     private double GPA;
@@ -45,7 +45,7 @@ class student {
 
     //Fully loaded constructor
 
-    public student(String name, String Stu_Id, double GPA, int age) {
+    public Student(String name, String Stu_Id, double GPA, int age) {
        this.name = name;
        this.Stu_Id = Stu_Id;
        this.GPA = GPA;
@@ -54,7 +54,7 @@ class student {
 
     //no - arg constructor
 
-    student(){
+    Student(){
         this.name = " ";
         this.Stu_Id = " ";
         this.GPA = 0.0;
@@ -68,53 +68,35 @@ class student {
     public int getAge() {
         return age;
 
-    }
+        }
+
+        @Override
+    public String toString(){
+                System.out.println("Name: " + name);
+            System.out.println("Student ID: " + Stu_Id);
+            System.out.println("GPA: " + GPA);
+            System.out.println("Age: " + age);
+            return "";
+        }
 
     //In a separate class named StudentAccess, create a main method that instantiates three student objects using the above two constructors separately. In addition, you should show how to access and mutate the object data field by calling the access/mutator methods.
 
-    public static class studentAccess{
-        public static void main(String[] Args){
-            student s1 = new student();
-            s1.setName("Karan");
-            s1.setStu_Id("123232");
-            s1.setGPA(3.4);
-            s1.setAge(19);
-
-            student s2 = new student("jackson", "32433", 4.5, 12 );
-            student s3 = new student("henry", "43232", 3.5, 24);
-
-            //pre mutation
-
-            System.out.println("pre-mutation");
-            System.out.println(s1.getName());
-            System.out.println(s1.getStu_Id());
-            System.out.println(s1.getGPA());
-            System.out.println(s1.getAge());
-            System.out.println();
-
-            System.out.println(s2.getName());
-            System.out.println(s2.getStu_Id());
-            System.out.println(s2.getGPA());
-            System.out.println(s2.getAge());
-
-            //post-mutation
-
-            s3.setAge(65);
-            s3.setGPA(4.5);
-            System.out.println();
-
-            System.out.println("Post-Mutation");
-            System.out.println(s3.getName());
-            System.out.println(s3.getStu_Id());
-            System.out.println(s3.getGPA());
-            System.out.println(s3.getAge());
+        public static class StudentAccess {
+            public static void main(String[] Args) {
+                Student s1 = new Student("Karan", "123232", 3.4, 19 );
+                Student s2 = new Student("jackson", "32433", 4.5, 12);
+                Student s3 = new Student("henry", "43232", 3.5, 24);
 
 
 
+                System.out.println(s1);
+                System.out.println(s2);
+                System.out.println(s3);
 
+                s1.setName("George");
+                System.out.println(s1);
 
+            }
         }
-
-    }
 }
 
